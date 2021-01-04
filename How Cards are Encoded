@@ -1,0 +1,26 @@
+cards wil be encoded with a 3 digit number XYZ
+
+X = Suit
+
+YZ = Actual Value
+
+1 = Diamonds
+2 = Clubs
+3 = Hearts
+4 = Spades
+* Highest Value suit is 4 for easier comparison later
+
+1 = 1
+.
+.
+.
+10 = 10
+11 = Jack
+12 = Queen
+13 = King
+
+ex.
+
+205 = 5 of Clubs
+413 = King of Spades
+
