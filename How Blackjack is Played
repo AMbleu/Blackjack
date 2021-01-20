@@ -1,0 +1,21 @@
+1. Player Chooses Amount to bet
+	Starting Amount: $1000
+	Base bet: $10
+2. Cards are dealt:
+	Player: Face UP
+	Dealer: Face Down
+	Player: Face Up
+	Dealer: Face Up
+2. Players Choose:
+	Hit: Gets another card
+	Stand:	Stays with hand they are currently holding
+	Special Options:
+		Split: If two of the same value cards are given then player may split cards to two seperate hands
+		Double: If the sum of the two cards dealt is 9, 10, 11 player may choose to double the bet but if the player choses this option then the player is only given one more card.
+3. Dealers Turn:
+	Flip face down card face up
+	If cards total is less than 17 then dealer must hit
+	If card total is 17 or more dealer must stand
+4. Winning:
+	Whomevers cards are closest to 21 wins the game
+	Any plalyers whos vlaue is higher than 21 has Busted 
