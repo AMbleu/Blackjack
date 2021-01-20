@@ -56,6 +56,7 @@ public class Card{
   };
 
   //Method to shorten the length of an array
+  //Returns an array of length minus 1 of inputted array
   /*
   Reduces the length of an array by one.
   Removes the indicated index of the array eg. removeElemet(array, 0) removes the
@@ -74,6 +75,8 @@ public class Card{
     return shortenedArray;
   }
   ////////////////////////////////////////////////////////////////////////////////
+  //Method to randmize an array(Shuffling)
+  //Returns a randmized copy of inputted array
   /*
   Creates an array of the appropriate amount of card
   Generates a random number as an index and places that value from the array into
@@ -118,37 +121,66 @@ public class Card{
     return shuffledDeck;
   }
   ////////////////////////////////////////////////////////////////////////////////
-
-
-}
-
-
-
-
-
-/*
-public static void shuffle(numOfDecks){
-  boolean[] chosenCards = new boolean[52];
-  Arrays.fill(chosenCards, false);
-
-  int[] shuffledDeck = new int[52 * numOfDecks];
-  Arrays.fill(shuffledDeck, 0);
-
-  while(checker < 52){
-    int shuffleCheck = (int)(Math.random() * 52);
-
-    if(chosenCards[i]){
-      continue;
+  //Method to Display a card
+  //Return void
+  /*
+  *************** Fix so that the amount of cards that can be displayed can be expanded *******************
+  Takes in an integer value and dsiplays on command line a ASCII value of a cardNum
+  Method is overloaded to be able to diplay two cards
+  */
+  ////////////////////////////////////////////////////////////////////////////////
+  public void displayCard(int cardNum){
+    int cardSuit = (int)(cardNum/100);
+    int cardValue = cardNum%100;
+    char[] suitSymbol = {'♦', '♣', '♥', '♠'};
+    char[] cardNumber = {'A', '2', '3', '4', '5', '6', '7', '8', '9', '1', 'J', 'Q', 'K'};
+    if(cardSuit > 3 || cardValue > 12){
+      System.out.println("Invalid Card Inputted");
     }
-
-
-
+    if(cardValue != 9){
+      System.out.println("┌───┐");
+      System.out.println("│" + suitSymbol[cardSuit] + "  │");
+      System.out.println("│  " + cardNumber[cardValue] + "│");
+      System.out.println("└───┘");
+    }else{
+     System.out.println("┌───┐");
+     System.out.println("│" + suitSymbol[cardSuit] + "  │");
+     System.out.println("│ " + cardNumber[cardValue] + "0" + "│");
+     System.out.println("└───┘");
+    }
   }
+  public void displayCard(int cardNumA, int cardNumB){
+    int cardSuitA = (int)(cardNumA/100);
+    int cardValueA = cardNumA%100;
+    int cardSuitB = (int)(cardNumB/100);
+    int cardValueB = cardNumB%100;
+    char[] suitSymbol = {'♦', '♣', '♥', '♠'};
+    char[] cardNumber = {'A', '2', '3', '4', '5', '6', '7', '8', '9', '1', 'J', 'Q', 'K'};
+    if(cardSuitA > 3 || cardValueA > 12){
+      System.out.println("Invalid Card Inputted");
+    }
+    if((cardValueA != 9) && (cardValueB != 9)){
+      System.out.println("┌───┐" + " " +"┌───┐");
+      System.out.println("│" + suitSymbol[cardSuitA] + "  │" + " " + "│" + suitSymbol[cardSuitB] + "  │");
+      System.out.println("│  " + cardNumber[cardValueA] + "│" + " " + "│  " + cardNumber[cardValueB] + "│");
+      System.out.println("└───┘" + " " + "└───┘");
+    }else if(cardValueA == 9){
+     System.out.println("┌───┐" + " " + "┌───┐");
+     System.out.println("│" + suitSymbol[cardSuitA] + "  │" + " " + "│" + suitSymbol[cardSuitB] + "  │");
+     System.out.println("│ " + cardNumber[cardValueA] + "0" + "│" + " " + "│  " + cardNumber[cardValueB] + "│");
+     System.out.println("└───┘" + " " + "└───┘");
+    }else if(cardValueB == 9){
+     System.out.println("┌───┐" + " " + "┌───┐");
+     System.out.println("│" + suitSymbol[cardSuitA] + "  │" + " " + "│" + suitSymbol[cardSuitB] + "  │");
+     System.out.println("│  " + cardNumber[cardValueA] + "│" + " " + "│ " + cardNumber[cardValueB] + "0" + "│");
+     System.out.println("└───┘" + " " + "└───┘");
+    }else{
+      System.out.println("┌───┐" + " " + "┌───┐");
+      System.out.println("│" + suitSymbol[cardSuitA] + "  │" + " " + "│" + suitSymbol[cardSuitB] + "  │");
+      System.out.println("│ " + cardNumber[cardValueA] + "0" + "│" + " " + "│ " + cardNumber[cardValueB] + "0" + "│");
+      System.out.println("└───┘" + " " + "└───┘");
+    }
+  }
+  ////////////////////////////////////////////////////////////////////////////////
+
 }
-
-
-
-
-
-
-*/

@@ -1,6 +1,7 @@
 public class Money{
   int currentBalance = 0;
-
+  /*
+  */
   public void setBalance(int amount){
     this.currentBalance = amount;
   }
