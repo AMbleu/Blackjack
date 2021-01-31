@@ -10,16 +10,43 @@ The purpose of this code is to emulate the card game blackjac in the command lin
 
 
 public class Blackjack{
- public static void main(String[] args){
-   System.out.println("Hello World");
-   int dealerTotal = 0;
-   int playerTotal = 0;
-   
+
+
+ public void game(){
+   boolean gameStarted = true;
+   Card cards = new Card();
+   MyFunctions func = new MyFunctions();
+   int i = 0;
+   //Creates and shuffles a new deck for the round
+   int[] dealerDeck = new int[156];
+   dealerDeck = cards.shuffleDeck(3);
+   int currentCard = 0;
+   //Stores the cards of each player
+   int[] playerCards = new int[21];
+   int[] dealerCards = new int[21];
+   playerCards = func.resetArray(playerCards);
+   dealerCards = func.resetArray(dealerCards);
+   //Game Started
+   while(gameStarted){
+     int currentPlayerCard = 0;
+     playerCards[currentPlayerCard] = dealerDeck[currentCard];
+     currentCard++;
+     currentPlayerCard++;
+     playerCards[currentPlayerCard] = dealerDeck[currentCard];
+     currentCard++;
+     currentPlayerCard++;
+     System.out.println(i + " - 1: " + playerCards[0] + " " + " 2: " + playerCards[1]);
+     if((func.addArray(playerCards)%100) > 10){
+       System.out.println("Player Cards Exceeded 10");
+     }
 
 
 
+     if(i>10){break;}
+     i++;
 
-
-
+   }
  }
+
+
 }

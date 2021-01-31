@@ -1,19 +1,16 @@
 public class Money{
-  int currentBalance = 0;
-  /*
-  */
-  public void setBalance(int amount){
-    this.currentBalance = amount;
+
+  public void loseMoney(Player loser, int moneyLost){
+    if(loser.playerCurrentBalance < moneyLost){
+      int balanceOwed = moneyLost - loser.playerCurrentBalance;
+      System.out.println("\n*Ovedrawn* \nOwe: $" + balanceOwed);
+    }else{
+      loser.playerCurrentBalance -= moneyLost;
+    }
   }
 
-  public void loseMoney(int moneyLost){
-    if(currentBalance < moneyLost){
-      int balanceOwed = moneyLost - currentBalance;
-      System.out.println("\n*Ovedrawn* \nOwe: $" + balanceOwed);
-    }
-    currentBalance -= moneyLost;
-  }
-  public void gainMoney(int moneyGained){
-    currentBalance += moneyGained;
+
+  public void gainMoney(Player winner, int moneyGained){
+     winner.playerCurrentBalance += moneyGained;
   }
 }

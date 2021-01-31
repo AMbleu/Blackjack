@@ -182,5 +182,27 @@ public class Card{
     }
   }
   ////////////////////////////////////////////////////////////////////////////////
+  public int cardValue(int card){
+    return card%100;
+  }
+  public String cardSuit(int card){
+    int cardSuite = card/100;
+    String suit = " ";
+    switch(cardSuite){
+      case 0:
+        suit = "Diamond";
+        break;
+      case 1:
+        suit = "Club";
+        break;
+      case 2:
+        suit = "Heart";
+        break;
+      case 3:
+        suit = "Spade";
+        break;
+    }
+    return suit;
+  }
 
 }
